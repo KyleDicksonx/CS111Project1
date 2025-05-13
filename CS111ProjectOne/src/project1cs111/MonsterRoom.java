@@ -1,6 +1,5 @@
 package project1cs111;
 
-
 import java.util.Scanner;
 
 public class MonsterRoom extends Room{
@@ -11,7 +10,7 @@ public class MonsterRoom extends Room{
 	}
 
     public int playRoom(Player player) {
-        return getNextRoom(player);
+        return this.getNextRoom(player);
     }
     
     private int getNextRoom(Player player) {
@@ -23,8 +22,13 @@ public class MonsterRoom extends Room{
         // variables for player interaction
         String command;
         int newRoomNum = getRoomNum();
-        Scanner kb = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner kb = new Scanner(System.in);
+        
         command = kb.nextLine();
+        
+        
+        
 
         // switch on the user's command
         switch (command) {
@@ -58,7 +62,7 @@ public class MonsterRoom extends Room{
             default:
                 System.out.println("Invalid command. Type help for details.");
         }
-        kb.close();
+        //kb.close();
         return newRoomNum;
     }
     
@@ -75,8 +79,9 @@ public class MonsterRoom extends Room{
     
     protected void userDrops(Player player) {
         System.out.println("What would you like to drop?");
-        Scanner keyboard = new Scanner(System.in);
-        String itemToDrop = keyboard.nextLine();
+        @SuppressWarnings("resource")
+		Scanner kb = new Scanner(System.in);
+        String itemToDrop = kb.nextLine();
         if (Utilities.isItemInContainer(itemToDrop, player.getInventory())) {
             player.removeFromInventory(itemToDrop);
             System.out.println("As the item hits the floor a swarm of beetles\n"
@@ -85,6 +90,7 @@ public class MonsterRoom extends Room{
         } else {
             System.out.println("You cannot drop something that you don't have");
         }
+        //kb.close();
     }
     
     
