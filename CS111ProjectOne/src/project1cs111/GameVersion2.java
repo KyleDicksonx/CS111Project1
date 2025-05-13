@@ -15,7 +15,7 @@ public class GameVersion2 {
         gameBoard[1] = new Room("Lab Room", "2 laptops;barking Germany Shephard;angry instructor", 1, "w0;e2;n4");
         gameBoard[2] = new Room("Green Room", "meowing kitten;", 2, "w1;e0");
         gameBoard[3] = new Room("Space Room", "start;moon;spaceman", 3, "w0;n2;s4");
-        gameBoard[4] = new MonsterRoom("Cute Kitten Room", null, 4, "s1;n3");
+        gameBoard[4] = new MonsterRoom("Cute Kitten Room", "a cute kitten", 4, "s1;n3");
 
         // keep track of which room player is in 
         int playerRoomNumber = 0;
