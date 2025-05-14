@@ -1,7 +1,19 @@
+/**
+ * Kyle Dickson
+ * 50116781
+ * I pledge that this submission is solely my work, and that I have neither given, nor received help from anyone.
+ */
 package project1cs111;
 
 public class GameVersion2 {
 	
+	
+	/**
+	 * The main method for GameVersion2.
+	 * This is a copy of the example game with the added MonsterRoom and 
+	 * a new room layout
+	 * @param args
+	 */
 	public static void main(String args[]) {
 
         // designate how many rooms are in the game

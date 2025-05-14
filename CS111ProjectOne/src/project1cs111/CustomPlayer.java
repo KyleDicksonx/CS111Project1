@@ -1,3 +1,8 @@
+/**
+ * Kyle Dickson
+ * 50116781
+ * I pledge that this submission is solely my work, and that I have neither given, nor received help from anyone.
+ */
 package project1cs111;
 
 import java.util.StringTokenizer;
@@ -14,11 +19,11 @@ public class CustomPlayer extends Player {
 	
 	/**
 	 * Non-default constructor. Calls the constructor of Player superclass and sets attack damage according to the hasWeapon instance field.
-	 * @param name of the player
-	 * @param room number where the player will start 
-	 * @param inventory contents
-	 * @param healthPoints
-	 * @param hasWeapon
+	 * @param name Name of the player.
+	 * @param room Starting room number.
+	 * @param inventory Contents of the players inventory
+	 * @param healthPoints Starting health points of the player.
+	 * @param hasWeapon Does the player have a weapon.
 	 */
     public CustomPlayer(String name, int room, String inventory, int healthPoints, boolean hasWeapon) {
         super(name, room, inventory);

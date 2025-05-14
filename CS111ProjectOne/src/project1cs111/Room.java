@@ -67,6 +67,9 @@ public class Room {
             case "help":
                 Utilities.printHelp();
                 break;
+            case "puzzle":
+            	System.out.println("Logic error");
+            	break;
             default:
                 System.out.println("Invalid command. Type help for details.");
         }
