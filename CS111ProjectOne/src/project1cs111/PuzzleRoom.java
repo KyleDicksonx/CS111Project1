@@ -2,14 +2,13 @@ package project1cs111;
 
 import java.util.Scanner;
 
-public class MonsterRoom extends Room{
+public class PuzzleRoom extends Room{
 	
-	public MonsterRoom(String roomName, String objects, int roomNum, String listOfExits) {
+	public PuzzleRoom(String roomName, String objects, int roomNum, String listOfExits, String puzzleAnswer) {
 		super(roomName, objects, roomNum, listOfExits);
 		
 	}
-
-    public int playRoom(Player player) {
+	public int playRoom(Player player) {
         return this.getNextRoom(player);
     }
     
@@ -59,6 +58,9 @@ public class MonsterRoom extends Room{
             case "help":
                 Utilities.printHelp();
                 break;
+            case "puzzle":
+            	runPuzzle();
+            	break;
             default:
                 System.out.println("Invalid command. Type help for details.");
         }
@@ -66,35 +68,7 @@ public class MonsterRoom extends Room{
         return newRoomNum;
     }
     
-    
-    
-    protected void userPicksUp(Player player) {
-        System.out.println("You see a cute kitten sitting in the middle of the floor\n"
-        		+ "and you lean over to pick it up.\n"
-        		+ "The kitten didn't like  that...  \n"
-        		+ "You may or may not be missing a finger.");
-        
-        
+    protected void runPuzzle() {
+    	
     }
-
-    // transfer item from user's inventory to room  
-    
-    protected void userDrops(Player player) {
-        System.out.println("What would you like to drop?");
-        @SuppressWarnings("resource")
-		Scanner kb = new Scanner(System.in);
-        String itemToDrop = kb.nextLine();
-        if (Utilities.isItemInContainer(itemToDrop, player.getInventory())) {
-            player.removeFromInventory(itemToDrop);
-            System.out.println("As the item hits the floor a swarm of beetles\n"
-            		+ "scuttle over and whisk the item off in to \n"
-            		+ "the void never to be seen again.");
-        } else {
-            System.out.println("You cannot drop something that you don't have");
-        }
-        //kb.close();
-    }
-    
-    
-    
 }

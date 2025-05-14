@@ -11,11 +11,11 @@ public class GameVersion3 {
 
         // populate the room array, using the superclass Room
         
-        gameBoard[0] = new Room("Space Room", "start;moon;spaceman", 3, "s1;e2;w0;n4");
-        gameBoard[1] = new MonsterRoom("Cute Kitten Room", null, 4, "s2;e3;w1;n0");
+        gameBoard[0] = new Room("Space Room", "start;moon;spaceman", 0, "s1;e2;w0;n4");
+        gameBoard[1] = new MonsterRoom("Cute Kitten Room", "a cute kitten", 1, "s2;e3;w1;n0");
         gameBoard[2] = new Room("Green Room", "meowing kitten;", 2, "s3;e4;w2;n1");
-        gameBoard[3] = new Room("Lab Room", "2 laptops;barking Germany Shephard;angry instructor", 1, "s4;e0;w3;n2");
-        gameBoard[4] = new Room("First Room", "1 apple;pumpkin", 0, "s0;e4;w1;n3");
+        gameBoard[3] = new Room("Lab Room", "2 laptops;barking Germany Shephard;angry instructor", 3, "s4;e0;w3;n2");
+        gameBoard[4] = new Room("First Room", "1 apple;pumpkin", 4, "s0;e4;w1;n3");
         
 
         // keep track of which room player is in 
@@ -26,6 +26,7 @@ public class GameVersion3 {
 
         // play the game, as long as player object has field continuePlay set to true
         while (player.getContinuePlay() == true) {
+        	
             playerRoomNumber = gameBoard[playerRoomNumber].playRoom(player);
         }
     }
