@@ -4,12 +4,22 @@ import java.util.StringTokenizer;
 
 public class CustomPlayer extends Player {
 	
+	/**The health points of the player*/
 	private int healthPoints;
+	/**The attack damage of the player*/
 	private int attackDamage;
+	/**Does the player have a weapon.*/
 	private boolean hasWeapon;
 	
 	
-	
+	/**
+	 * Non-default constructor. Calls the constructor of Player superclass and sets attack damage according to the hasWeapon instance field.
+	 * @param name of the player
+	 * @param room number where the player will start 
+	 * @param inventory contents
+	 * @param healthPoints
+	 * @param hasWeapon
+	 */
     public CustomPlayer(String name, int room, String inventory, int healthPoints, boolean hasWeapon) {
         super(name, room, inventory);
         this.healthPoints = healthPoints;
@@ -22,7 +32,11 @@ public class CustomPlayer extends Player {
     	}
     }
     
-    // getter function to get listing of inventor
+    /**
+     * Getter method for the player's inventory.
+     * Prints all of the players current items, the number of items, the player's current health, 
+     * attack damage, and if the player is carrying a weapon.
+     */
     @Override
     public void printInventory() {
         StringTokenizer strT = new StringTokenizer(getInventory(), ";");
@@ -42,6 +56,51 @@ public class CustomPlayer extends Player {
         	System.out.println("You are not carrying a weapon.");
         }
        
+    }
+    
+    /**
+     * Getter method for the healthPoints instance field. 
+     * @return healthPoints
+     */
+    public int getHealthPoints() {
+    	return this.healthPoints;
+    }
+    /**
+     * Setter method for the healthPoints instance field.
+     * @param healthPoints
+     */
+    public void setHealthPoints(int healthPoints) {
+    	this.healthPoints = healthPoints;
+    }
+    
+    /**
+     * Getter method for the attackDamage instance field.
+     * @return attackDamage
+     */
+    public int getAttackDamage() {
+    	return this.attackDamage;
+    }
+    /**
+     * Setter method for the attack damage instance field.
+     * @param attackDamage
+     */
+    public void setAttackDamage(int attackDamage) {
+    	this.attackDamage = attackDamage;
+    }
+    
+    /**
+     * Getter method for the hasWeapon instance field.
+     * @return hasWeapon
+     */
+    public boolean getHasWeapon() {
+    	return this.hasWeapon;
+    }
+    /**
+     * Setter method for the hasWeapon instance field.
+     * @param hasWeapon
+     */
+    public void setHasWeapon(boolean hasWeapon) {
+    	this.hasWeapon = hasWeapon;
     }
     
     

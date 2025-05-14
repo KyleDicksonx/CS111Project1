@@ -17,6 +17,7 @@ public class PuzzleRoom extends Room{
         // inform the player of his/her current room
         System.out.println("You are in the " + getRoomName());
         System.out.println("What would you like to do?");
+        System.out.println("SPECIAL ACTION! Type \"puzzle\" to interact with the puzzle.");
 
         // variables for player interaction
         String command;
